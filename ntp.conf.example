@@ -1,0 +1,18 @@
+disable monitor
+server 0.ru.pool.ntp.org
+server 1.ru.pool.ntp.org
+server 2.ru.pool.ntp.org
+server 3.ru.pool.ntp.org
+
+#restrict default noquery nomodify
+restrict default kod nomodify notrap nopeer noquery
+restrict -6 default kod nomodify notrap nopeer noquery
+restrict 127.0.0.1
+
+#clients
+restrict 55.33.66.0 mask 255.255.255.0 nomodify notrap noquery
+restrict 55.33.77.0 mask 255.255.255.0 nomodify notrap noquery
+restrict 55.33.88.0 mask 255.255.255.0 nomodify notrap noquery
+# ..............
+restrict -6 2a00:1234:: mask ffff:ffff:ffff:ffff:: nomodify notrap noquery
+restrict 192.168.1.0 mask 255.255.255.0 nomodify notrap noquery
